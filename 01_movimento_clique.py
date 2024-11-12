@@ -14,5 +14,3 @@ for i in range(50):
     time.sleep(0.1)
     print(i)
 
-
-
