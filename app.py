@@ -1,1 +1,0 @@
-print("Olá Mundo, meu primeiro projeto pata p GitHUb")
