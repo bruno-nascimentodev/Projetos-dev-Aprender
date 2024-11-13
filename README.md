@@ -1,3 +1,3 @@
-Seja Bem Vindo 
+🌟 Seja Bem-Vindo! 🌟
 
-Repositório de códigos python destinado a colocar os conhecimentos adquiridos no curso Dev Aprender em prática. 
+📂 Repositório de códigos em Python destinado a colocar os conhecimentos adquiridos no curso Dev Aprender em prática! 💻🚀
