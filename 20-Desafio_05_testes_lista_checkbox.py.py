@@ -1,4 +1,6 @@
-# Desafios 4 - Digite um texto grande no campo abaixo, digitando em uma velocidade humana
+# Desafios 5
+# 1. Marque apenas as opções "Carro 2, Carro 4 e Carro 5
+# 2. Marque todos as opções a seguir sem escrever um código de acesso invididual para cada um
 
 # Importação de Bibliotecas
 from selenium import webdriver
@@ -68,39 +70,34 @@ def iniciar_drive():
 
 driver = iniciar_drive()
 
-def busca_elemento(caminho):
-    elemento = driver.find_element(By.XPATH,caminho)
-    return elemento
+# Desafio 05
 
 # Entrando na página
-# driver.get('https://cursoautomacao.netlify.app/')
 driver.get('https://cursoautomacao.netlify.app/desafios')
 
-def digitar_texto(texto,elemento):
-    for letra in texto:
-        elemento.send_keys(letra)
-        sleep(random.randint(1,2)/30)
-
-driver.execute_script('window.scrollTo(0,1100)')
+# Rolando até a area dos checkboxs
+driver.execute_script('window.scrollTo(0,1750);')
 
 sleep(1)
 
-# Busca por elementos
-paragrafo = driver.find_element(By.XPATH,"//textarea[@id='campoparagrafo']")
+# 1. Marque apenas as opções "Carro 2, Carro 4 e Carro 5
+# Buscando elementos 
+checkboxs = driver.find_elements(By.XPATH,"//input[@class='form-check-input']")
 
-# Texto a ser digitado
-texto = '''Mussum, nome artístico de Antônio Carlos Bernardes Gomes, foi um dos comediantes mais carismáticos e queridos do Brasil. Nascido no Rio de Janeiro em 1941, ele ficou famoso como integrante do grupo Os Trapalhões, ao lado de Didi, Dedé e Zacarias. Sua maneira única de falar, com um jeito irreverente e o uso constante de bordões, como "Cacildis!" e "Forévis", conquistou gerações de fãs. Além da carreira no humor, Mussum também teve sucesso como músico, sendo integrante do grupo Os Originais do Samba. Seu legado permanece vivo na cultura popular brasileira, lembrado com carinho por seu talento, simpatia e humor genuíno.'''
+# Clicando nos elementos
+checkboxs[4].click()
+checkboxs[6].click()
+checkboxs[7].click()
 
 sleep(1)
 
-# Chamada da função
-digitar_texto(texto,paragrafo)
+# 2. Marque todos as opções a seguir sem escrever um código de acesso invididual para cada um
+# Gerando range e lista para clicar de forma automática
+checks_selecionar = range(8,18)
+list_checks_selecionar = list(checks_selecionar)
 
-# Clique no botão de validação 
-botao_validar = driver.find_element(By.XPATH,"//button[@onclick='ValidarDesafio4()']")
-botao_validar.click()
-
-
-
+# Clicando nos elementos
+for i in list_checks_selecionar:
+    checkboxs[i].click()    
 
 input('')
